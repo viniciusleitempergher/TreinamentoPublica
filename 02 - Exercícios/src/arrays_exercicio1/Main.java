@@ -67,7 +67,7 @@ public class Main {
 				break;
 			case 4:
 				pesquisa = JOptionPane.showInputDialog("Digite o nome a ser alterado:");
-				indicePessoa = pesquisaNome(pesquisa, nomes, cidades, emails, telefones, cidades);
+				indicePessoa = pesquisaNome(pesquisa, nomes, idades, emails, telefones, cidades);
 				
 				if (indicePessoa == -1) {
 					JOptionPane.showMessageDialog(null, "Nome não encontrado!");
@@ -88,7 +88,7 @@ public class Main {
 				break;
 			case 5:
 				pesquisa = JOptionPane.showInputDialog("Digite o nome a ser removido:");
-				indicePessoa = pesquisaNome(pesquisa, nomes, cidades, emails, telefones, cidades);
+				indicePessoa = pesquisaNome(pesquisa, nomes, idades, emails, telefones, cidades);
 				
 				if (indicePessoa == -1) {
 					JOptionPane.showMessageDialog(null, "Nome não encontrado!");
@@ -125,7 +125,7 @@ public class Main {
 	 * @return indice - O índice da pessoa escolhida no array. Caso não encontre nenhuma com o nome, retorna -1.
 	 * 
 	 */
-	static int pesquisaNome(String nome, ArrayList<String> nomes, ArrayList<String> idades,
+	static int pesquisaNome(String nome, ArrayList<String> nomes, ArrayList<Integer> idades,
 			ArrayList<String> emails, ArrayList<String> telefones, ArrayList<String> cidades) {
 		
 		ArrayList<Integer> pessoasNomeIgual = new ArrayList<>();
