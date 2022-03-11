@@ -18,8 +18,11 @@ public class Main {
 
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(data);
-			calendar.add(Calendar.DATE, 1);
 			
+			calendar.add(Calendar.DATE, 1);
+			JOptionPane.showMessageDialog(null, df.format(calendar.getTime()));
+			
+			calendar.add(Calendar.DATE, -2);
 			JOptionPane.showMessageDialog(null, df.format(calendar.getTime()));
 		} catch (ParseException e) {
 			JOptionPane.showMessageDialog(null, "Data inválida!");
