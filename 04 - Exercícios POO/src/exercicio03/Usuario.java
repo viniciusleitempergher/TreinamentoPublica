@@ -1,14 +1,22 @@
 package exercicio03;
 
-import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Usuario {
 	private String login, senha;
-	private ArrayList<Conta> contas;
+	private Conta conta;
 	
 	public Usuario(String login, String senha) {
 		this.login = login;
 		this.senha = senha;
+	}
+	
+	public void criarConta() {
+		conta = new Conta(
+				JOptionPane.showInputDialog("Informe a agência:"),
+				JOptionPane.showInputDialog("Informe a conta corrente:"),
+				0
+			);
 	}
 
 	public String getLogin() {
@@ -27,11 +35,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public ArrayList<Conta> getContas() {
-		return contas;
+	public Conta getConta() {
+		return conta;
 	}
 
-	public void setContas(ArrayList<Conta> contas) {
-		this.contas = contas;
+	public void setConta(Conta contas) {
+		this.conta = contas;
 	}
 }
