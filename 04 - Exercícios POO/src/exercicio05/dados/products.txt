@@ -1,0 +1,2 @@
+Banana;Bananas;15.0
+bananinha;bananinhas;800.0

@@ -1,0 +1,2 @@
+vinicius;admin123;1
+gabi;bagi;0
