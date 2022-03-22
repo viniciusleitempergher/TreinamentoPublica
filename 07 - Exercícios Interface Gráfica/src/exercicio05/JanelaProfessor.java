@@ -167,6 +167,11 @@ public class JanelaProfessor extends JFrame {
 		btnAdicionarProva.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Dados.provas.add(JOptionPane.showInputDialog("Digite o nome da prova:"));
+				
+				for (Aluno a : Dados.alunos) {
+					a.getNotas().add(0.0);
+				}
+				
 				atualizarTabela();
 			}
 		});
