@@ -78,25 +78,26 @@ public class JanelaInformacoesAluno extends JFrame {
 					return;
 				}
 				
-				if (indiceAluno == -1) {
-					Aluno a = new Aluno();
-					
-					a.setNome(txtNome.getText());
-					a.setIdade(Integer.parseInt(txtIdade.getText()));					
-					a.setSexo(rdbtnMasculino.isSelected() ? "M" : "F");
-					
+				Aluno a = new Aluno();
+				
+				a.setNome(txtNome.getText());
+				a.setIdade(Integer.parseInt(txtIdade.getText()));					
+				a.setSexo(rdbtnMasculino.isSelected() ? "M" : "F");
+				
+				if (indiceAluno == -1) {					
 					Dados.alunos.add(a);
-					
-					if (Dados.professor) {
-						JanelaProfessor janelaProfessor = new JanelaProfessor();
-						janelaProfessor.setVisible(true);
-					} else {
-						// TODO abrir do aluno
-					}
-					fechar();
 				} else {
-					
+					Dados.alunos.set(indiceAluno, a);
 				}
+				
+				if (Dados.professor) {
+					JanelaProfessor janelaProfessor = new JanelaProfessor();
+					janelaProfessor.setVisible(true);
+				} else {
+					JanelaAluno janelaAluno = new JanelaAluno(indiceAluno);
+					janelaAluno.setVisible(true);
+				}
+				fechar();
 			}
 		});
 		btnOk.setBounds(10, 202, 165, 21);

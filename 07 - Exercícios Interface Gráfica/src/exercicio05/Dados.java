@@ -6,4 +6,5 @@ public class Dados {
 	public static boolean professor = false;
 	public static ArrayList<Aluno> alunos = new ArrayList<>();
 	public static ArrayList<ListaPresenca> chamadas = new ArrayList<>();
+	public static ArrayList<String> provas = new ArrayList<>();
 }

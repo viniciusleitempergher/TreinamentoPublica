@@ -23,6 +23,9 @@ public class JanelaLogin extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		// Pré cadastrar 5 alunos
+		preCadastrar();
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -79,9 +82,12 @@ public class JanelaLogin extends JFrame {
 					JOptionPane.showMessageDialog(null, "Selecione se é aluno ou professor!");
 				}
 				if (selecao.equals("aluno")) {
-					for (Aluno a : Dados.alunos) {
-						if (a.getNome().equals(txtNome.getText())) {
-							// TODO Abrir tela do aluno
+					for (int i = 0; i < Dados.alunos.size(); i++) {
+						if (Dados.alunos.get(i).getNome().equals(txtNome.getText())) {
+							Dados.professor = false;
+							JanelaAluno telaAluno = new JanelaAluno(i);
+							telaAluno.setVisible(true);
+							fecharLogin();
 						}
 					}
 				} 
@@ -99,6 +105,41 @@ public class JanelaLogin extends JFrame {
 	
 	public void fecharLogin() {
 		this.dispose();
+	}
+	
+	/**
+	 * Método para pré cadastrar 5 alunos no banco, antes de iniciar a aplicação
+	 */
+	public static void preCadastrar() {
+		Aluno a = new Aluno();
+		a.setNome("Vinícius");
+		a.setIdade(18);
+		a.setSexo("M");
+		Dados.alunos.add(a);
+		
+		a = new Aluno();
+		a.setNome("Pedro");
+		a.setIdade(17);
+		a.setSexo("M");
+		Dados.alunos.add(a);
+		
+		a = new Aluno();
+		a.setNome("Lila");
+		a.setIdade(18);
+		a.setSexo("F");
+		Dados.alunos.add(a);
+		
+		a = new Aluno();
+		a.setNome("Pedra");
+		a.setIdade(18);
+		a.setSexo("F");
+		Dados.alunos.add(a);
+		
+		a = new Aluno();
+		a.setNome("Bruba");
+		a.setIdade(17);
+		a.setSexo("F");
+		Dados.alunos.add(a);
 	}
 
 }
